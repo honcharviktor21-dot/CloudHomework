@@ -1,1 +1,22 @@
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
 
+# Create a branch and add files
+git checkout -b feature/hello-world
+
+cat > hello.py << 'EOF'
+def greet(name):
+    return f"Hello, {name}! Welcome to GitHub Cloud."
+if __name__ == "__main__":
+    print(greet("World"))
+EOF
+
+cat > README.md << 'EOF'
+# GitHub Cloud Lab
+My submission for the cloud lab.
+EOF
+
+# Commit and push
+git add .
+git commit -m "Add hello script and README"
+git push origin feature/hello-world
